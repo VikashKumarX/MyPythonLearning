@@ -1,3 +1,4 @@
+#pupose : learning
 var1 = 20.3
 var2 = int(var1) # Float to int
 var3 = complex(var1) # Float to Complex

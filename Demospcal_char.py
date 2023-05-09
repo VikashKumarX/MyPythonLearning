@@ -1,5 +1,5 @@
 # Version :1.0 & purpose: Insert special character in words
-# Begin
+# Begins
 # taking input from user 
 demoword = str(input("Enter a word: "))
 # creating an empty list

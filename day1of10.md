@@ -1,30 +1,28 @@
 # Day 1 of 10 - Introduction to Python
 About Python
--Guido van Rossum created Python in the late 1980s. 
--dynamic programming language
+- Guido van Rossum created Python in the late 1980s. 
+- dynamic programming language
 
 ## Installation and Setting up the Environment:
-
-Python is available for download and installation on a variety of platforms, including Windows, Mac, and Linux. Python can be downloaded from [the official website](https://www.python.org/downloads/).
+- Python is available for download and installation on a variety of platforms, including Windows, Mac, and Linux. Python can be downloaded from [the official website](https://www.python.org/downloads/).
 Following the installation of Python, you can configure your environment with an Integrated Development Environment (IDE) such as [PyCharm](https://www.jetbrains.com/pycharm/download/#section=windows) download community edition.
-I personally use Visual Studio Code (https://code.visualstudio.com/download).
+I personally use [Visual Studio Code](https://code.visualstudio.com/download).
 ##Sample Coode
-Let's see an example of the most famous "Hello World!":
-print('Hello World!') # print hello world on console.
-
+- Let's see an example of the most famous "Hello World!":
+- print('Hello World!') # print hello world on console.
 ## Commenting in python 
-Comments starts with a #, and Python will ignore them for Example
+- Comments starts with a #, and Python will ignore them for Example
 #This is a comment                   or print("Hello, World!")#This is a comment      
 print("Hello,Ethana!")
-For multiline comment
+- For multiline comment
 """
 This is a comment
 written in
 more than just one line
 """
-print("Hello, Jarvis!") 
+### print("ABove is multiline comment") 
 ## Variables
-In Python has no command for declaring a variable.A variable is created the moment you first assign a value to it.Some rules for Python variables:
+ - In Python has no command for declaring a variable.A variable is created the moment you first assign a value to it.Some rules 
 - A variable name must start with a letter or the underscore character
 - A variable name cannot start with a number
 - A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )
@@ -40,30 +38,24 @@ sample_var1, sample_var2, sample_var3 = "Kiwi", "Banana", "Cherry"
 print(sample_var1)
 print(sample_var2)
 print(sample_var3)
-
-or 
+- or 
 sample_var1=sample_var2=sample_var3="Passion-Fruit"
-
-If we want to specify the data type of a variable, this can be done with casting.
+- If we want to specify the data type of a variable, this can be done with casting.
 Example
 demovarx = str(74)    # demovarx will be '74'
 demovary = int(84684)    # demovary will be 84684
 demovarz = float(336)  # demovarz will be 336.0 
 
-We can get the` data type of a variable with the type() function.Example
+- We can get the data type of a variable with the type() function.Example
 print(type(demovarx))  # string
 print(type(demovary))  # int
 
-Variable names are case-sensitive.Example
+- Variable names are case-sensitive.Example
 demovara = 4
 demovarA = "Geek"
 #A will not overwrite a 
-
-
 ## Basic Data Types:
-
-Python includes a number of built-in data types for storing and manipulating data. The following are the most common ones:
-
+- Python includes a number of built-in data types for storing and manipulating data. The following are the most common ones:
 - Text Type: str
 - Numeric Types: int, float, complex
 - Sequence Types: list, tuple, range
@@ -102,7 +94,7 @@ print(demo_vara) #Above you assign multi-line string
 
 ## String Operations
 
-#Slicing:
+## Slicing:
 demovar1 = "Hello, World!"
 print("Print chars between index 2 and 5:-",demovar1[2:5]) # Get the characters from position 2 to position 5 (not included).The first character has index 0.
 print("Print complete string :-",demovar1[:]) # print all string
@@ -110,11 +102,11 @@ print("Print chars from index 2 ownwards :-",demovar1[2:]) # print string from s
 print("Print chars before index 6 :- ",demovar1[:6]) # print string from before 6 index to last
 #We can control the start index, the stop index, and the step size s[start:stop:step] 
 print("Print char between index 1 and 7 with step size of 2 :- ",demovar1[1:7:2]) # o/p el,
-# Negative Slicing
+## Negative Slicing
 print("Print chars between negative index -5 and -2 :-",demovar1[-5:-2]) #o/p orl "o" in "World!" (position -5) it is included but not included "d" in "World!" (position -2). 
 print("Print reverse string :-",demovar1[::-1])# reverse string o/p !dlroW ,olleH
 
-#Modify
+##Modify
 a = "Hello, World!"
 print(a.upper())
 print(a.lower())
@@ -126,11 +118,11 @@ a = "Hello, World!"
 print(a.replace("H", "J"))
 a = "Hello, World!"
 print(a.split(",")) # returns ['Hello', ' World!'] 
-##Concat
+## Concat
 a = "Hello"
 b = "World"
 print(a + b ) # Hello World
-##Formatting
+## Formatting
 quantity = 3
 itemno = 567
 price = 49.95

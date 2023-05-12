@@ -68,8 +68,6 @@ demovarA = "Geek"
 - Tuples are ordered immutable collections of elements.
 - Set  is a collection which is unordered, unchangeable*, and unindexed.
 - Dictionaries are collections of key-value pairs that are not ordered.
-## Mutable vs Immutable
-
 
 x = 1    # int
 y = 2.8  # float

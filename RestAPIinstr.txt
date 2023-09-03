@@ -1,0 +1,135 @@
+    Install your virtualenv using `ip3 install virtualenv`
+    Write the name of the environment and the Python version you want to work with using the command virtualenv pyEnv -p python3 and activate it using source myEnv/bin/activate
+    Install the flask framework using pip3 install flask
+Confirm if all your dependencies and packages are installed using pip freeze
+Back in your directory, create your Flask App file and name it app.py  When a client makes a request to the flask server, and Flask receives a request from the client, it needs to make your sample code objects open to the function you’re working with. For example, when flask invokes a data function, it returns a value that will be the response to the request sent from your data. In most cases, the response can be in a string or sometimes in JSON format, which is then sent back to the client as an HTML page.
+sample.py
+from flask import Flask, request, jsonify
+import json
+import sqlite3
+
+
+app = Flask(__name__)
+
+
+def db_connection():
+   conn = None
+   try:
+       conn = sqlite3.connect("events.sqlite")
+   except sqlite3.error as e:
+       print(e)
+   return conn
+
+
+
+
+events_list = [
+   {
+       "id":0,
+       "event_type": "pull_request",
+       "event_name": "change_event"
+   },
+
+
+   {
+       "id":1,
+       "event_type":"release",
+       "event_name":"deployment_event"
+   },
+   {
+       "id":2,
+       "event_type":"push",
+       "event_name":"workflow_event"
+   },
+   {
+       "id":3,
+       "event_type": "pull_request_merged",
+       "event_name":"deployment_event"
+   }
+]
+Next, we’ll start writing our Python code in the app.py file we created. We’ll be importing Flask, request, and Jsonify from Flask. Flask will provide us with the application instance, the request will allow us to add methods to routes, and Jsoinfy will encode python dictionaries into JSON strings. Add the methods GET (to get a specific event) and POST (create a new event) in your REST API code; we’ll integrate a fast SQL db engine known as SQLite, which comes bundled with our REST Flask API.
+@app.route('/events', methods=['GET', 'POST'])
+def events():
+   conn = db_connection()
+   cursor = conn.cursor()
+
+
+   if request.method == 'GET':
+       if len(events_list) > 0:
+           # encode list of events in json
+           return jsonify(events_list)
+       else:
+           'Event not found', 404
+  
+   if request.method == 'POST':
+       new_event_type = request.type['event_type']
+       new_event_name = request.type['event_name']
+
+
+       sql = """INSERT INTO event (event_type, event_name)
+                VALUES (?, ?, ?)"""
+       cursor = cursor.execute(sql, (event_type, event_name))
+       conn.commit()
+       return f"event with the id: 0 created successfully", 201
+
+
+       new_obj = {
+           'id':iD,
+           'event_type': new_event_type,
+           'event_name': new_event_name
+       }
+
+
+       events_list.append(new_obj)
+       return jsonify(events_list), 201
+
+
+@app.route('/event/<int:id>', methods=['GET', 'PUT', 'DELETE'])
+def single_event_workflow(id):
+   if request.method == 'GET':
+       for event in events_list:
+           if event['id'] -- id:
+               return jsonify(event)
+           pass
+   if request.method == 'PUT':
+       sql = """UPDATE event
+               SET event_type=?,
+                   event_name=?,
+               WHERE id=? """
+       for event in events_list:
+           if event['id'] == id:
+               event['event_type'] = request.event['event_type']
+               event['event_name'] = request.event['event_name']
+               updated_event = {
+                   'id':id,
+                   'event_type': event['event_type'],
+                   'event_name': event['event_name']
+               }
+               conn.execute(sql, (event_type, event_name, id))
+               conn.commit()
+               return jsonify(updated_event)
+
+
+
+
+if __name__ == '__main__':
+   app.run(debug=True)
+
+    Create your database file for your SQLite configurations called db.py SQLite is a stand-alone DMS that lets you run database queries on your APIs faster. It’s a lightweight no, network access embedded type of software for you to write SQL and execute SQL queries.
+
+import sqlite3
+
+conn = sqlite3.connect("events.sqlite")
+
+cursor = conn.cursor()
+sql_query = """ CREATE TABLE events (
+    id integer PRIMARY KEY,
+    event_type text NOT NULL,
+    event_name text NOT NULL
+)"""
+cursor.execute(sql_query)
+
+    Next, run your application using python app.py you can access it using the  URL generated in debug mode from your terminal. 
+loc :-https://cto.ai/blog/building-a-restful-api-with-python/
+
+

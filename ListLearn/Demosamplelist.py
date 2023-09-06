@@ -15,7 +15,10 @@ Initial List:
 List after performing Insert Operation: 
 [2, 4, 6, 'hello', 8, 10]
 '''
-
+#other examples
+'''
+coming soon
+'''
 # python program to demonstrate working of append and insert function
 # assign list
 demovar = ['geeks','vs']

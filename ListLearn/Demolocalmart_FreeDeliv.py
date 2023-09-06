@@ -1,4 +1,4 @@
-# purpose: Special free delivery to selected customer & version: 1.0
+# purpose: Special free delivery to selected customer 
 '''Criteria:
 1. Shopping value is less then 250 no free delivery
 2. Shopping value between 300 and 600 (5% discount)
